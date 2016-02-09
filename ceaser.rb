@@ -4,7 +4,7 @@ class Ceaser
   attr_reader :message, :rotation, :character_map
   def initialize(rotation, message)
     @rotation = rotation
-    @message = message.chars
+    @message = message.delete(' ').chars
     @character_map = ('a'..'z').to_a
   end
 
@@ -18,6 +18,6 @@ class Ceaser
 end
 
 if __FILE__ == $PROGRAM_NAME
-  ceaser = Ceaser.new(5, "hello")
+  ceaser = Ceaser.new(5, "hello my")
   puts ceaser.wrap
 end
