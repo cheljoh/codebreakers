@@ -11,13 +11,14 @@ class Vigenere
   end
 
   def rotation_of_key_word
-    key_word.map { |letter| index = character_map.index(letter) + 1 }
+    @rotation = key_word.map { |letter| index = character_map.index(letter) + 1 }
   end
 
   def vigenere
-    message.map { |letter| index = character_map.index(letter)
-                       new_index = (index + rotation) % 30
-                       character_map[new_index]
+    message.map { |letter| index = (character_map.index(letter) + 1)
+                       new_index = rotation.map { |num| index + num }
+                      #  full_index = new_index % message.length -- look into counterg
+                       message.map { |index| character_map[index] }
                 }.join
   end
 end
