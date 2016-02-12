@@ -6,7 +6,7 @@ class Vigenere
   def initialize(key_word, message)
     @key_word = key_word.downcase.chars
     @message = message.downcase.chars
-    @character_map = ('a'..'z').to_a + [" ", ".", ",", "!"]
+    @character_map = ('a'..'z').to_a #+ [" ", ".", ",", "!"]
     rotation_of_key_word
   end
 
@@ -24,12 +24,12 @@ class Vigenere
   end
 
   def vigenere
-    rotation_for_encryption.map { |num| character_map[num]}
+    rotation_for_encryption.map { |num| character_map[num]}.join("")
   end
 
 end
 
 if __FILE__ == $PROGRAM_NAME
-  text = Vigenere.new("Bacon", "taylor Make PHP great again.")
+  text = Vigenere.new("Bacon", "Make")
   puts text.vigenere
 end
