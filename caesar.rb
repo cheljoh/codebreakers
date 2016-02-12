@@ -1,6 +1,6 @@
 require 'pry'
 
-class Ceaser
+class Caesar
   attr_reader :message, :rotation, :character_map
   def initialize(rotation, message)
     @rotation = rotation
@@ -17,6 +17,6 @@ class Ceaser
 end
 
 if __FILE__ == $PROGRAM_NAME
-  ceaser = Ceaser.new(13, "Be sure to drink you Ovaltine!")
-  puts ceaser.wrap
+  caesar = Caesar.new(13, "Be sure to drink you Ovaltine!")
+  puts caesar.wrap
 end
